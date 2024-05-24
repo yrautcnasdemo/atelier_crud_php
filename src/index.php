@@ -24,8 +24,9 @@ $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
     //on récupère les données sous forme de tableau associatif
     $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    print_r($users);
-
+    echo "<pre>";
+        print_r($users);
+    echo "</pre>";
 ?>
 
 
@@ -45,11 +46,21 @@ $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
             <td>Nom</td>
         </thead>
         <tbody>
-            <tr>
-                <td>0</td>
-                <td>bob</td>
-                <td>lebricoleur</td>
-            </tr>
+
+            <?php
+            //Pour chaque utilisateur récupèré dans $user, on affiche une nouvelle ligne dans la table HTML
+                foreach($users AS $user) {
+            //Chaque utilisateur de la table $users sera identifier dans le foreach en tant que $user
+                ?>
+                    <tr> 
+                        <td><?= $user["id"] ?></td>
+                        <td><?= $user["first_name"] ?></td>
+                        <td><?= $user["last_name"] ?></td>
+                    </tr>
+                <?php
+                }
+            ?>
+
         </tbody>
     </table>
 </body>

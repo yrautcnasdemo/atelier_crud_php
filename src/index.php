@@ -1,18 +1,6 @@
-<?php 
-    const DBHOST = "db"; //correspond a db du fichier "Docker-compose.yml"
-    const DBNAME = "atelier_crud"; //correspond a MySQL DATABASE du fichier "Docker-compose.yml"
-    const DBUSER = "test"; //correspond a MySQL USER du fichier "Docker-compose.yml"
-    const DBPASS = "test"; //correspond a MySQL PASSWORD du fichier "Docker-compose.yml"
 
-$dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
-
-    //TRY CATCH, on TRY de se connecter et cela ne marche on CATCH le messaged'erreur
-    try {
-        $db = new PDO($dsn, DBUSER, DBPASS);
-        echo "Connexion réussi" . "<br>";
-    } catch(PDOException $error) {
-        echo "Echec de la connexion: " . $error->getMessage() . "<br>";
-    }
+<?php
+    require_once("connect.php");
 
     //Ici on a notre request
     $sql = "SELECT * FROM users";
@@ -44,6 +32,7 @@ $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
             <td>id</td>
             <td>Prénom</td>
             <td>Nom</td>
+            <td>Actions</td>
         </thead>
         <tbody>
 
@@ -56,10 +45,16 @@ $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
                         <td><?= $user["id"] ?></td>
                         <td><?= $user["first_name"] ?></td>
                         <td><?= $user["last_name"] ?></td>
+                        <td>
+                            <a href="user.php?id=<?= $user["id"] ?>">Voir</a>
+                        </td>
                     </tr>
                 <?php
                 }
             ?>
+
+            <a href="form.php">Ajoutez un utilisateur</a>
+
 
         </tbody>
     </table>

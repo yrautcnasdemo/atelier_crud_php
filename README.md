@@ -13,9 +13,9 @@ Créer, afficher, mettre à jour et supprimer des données d'une liste d'utilisa
 
 Affichage des utilisateurs :
 
--   [ ] Créer une table HTML contenant une liste d'utilisateurs avec quelques exemples (id, prénom et nom).
--   [ ] Créer une table `users` dans la base de données qui contiendra 3 colonnes :`id`, `first_name` et `last_name`.
--   [ ] Insérer quelques utilisateurs dans la table `users` via phpMyAdmin.
+-   [x] Créer une table HTML contenant une liste d'utilisateurs avec quelques exemples (id, prénom et nom).
+-   [x] Créer une table `users` dans la base de données qui contiendra 3 colonnes :`id`, `first_name` et `last_name`.
+-   [x] Insérer quelques utilisateurs dans la table `users` via phpMyAdmin.
 -   [ ] Dans `index.php`, créer une requête SQL pour récupérer la liste d'utilisateurs de la base de données.
 -   [ ] Préparer et exécuter la requête
 -   [ ] Dans `index.php` utiliser le résultat de la requête pour alimenter la table HTML.

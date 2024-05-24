@@ -36,11 +36,11 @@ Affichage d'une page par utilisateur :
 -   [x] Dans `index.php`, créer une nouvelle colonne, `actions` dans la table HTML (nouvel élément <th> dans l'élément <thead>).
 -   [x] Dans `index.php`, créer un lien vers une nouvelle page, `user.php`, dans la colonne `actions` via un nouvel élément <td>. Ajouter l'id de l'utilisateur dans ce lien en chaîne de requête (`?id=`).
 -   [x] Créer la page `user.php`. Utiliser la superglobale `GET` qui pour récupérer la valeur de l'`id` dans l'url (`$_GET[xid']`).
--   [x] S'il n'y a pas d'`id` dans l'url, rediriger vers la page `index.php` (`header('Location: index.php');`).
+-   [ ] S'il n'y a pas d'`id` dans l'url, rediriger vers la page `index.php` (`header('Location: index.php');`).
 -   [x] Nettoyer l'`id` avec `strip_tags()` pour retirer les potentiels caractères spéciaux placés par erreur ou de façon malintentionnée.
 -   [x] Dans `user.php`, créer une requête SQL permettant d'afficher l'utilisateur pour lequel l'`id` correspond à celle présente dans l'url.
 -   [x] Préparer et exécuter la requête.
--   [] Afficher le prénom et le nom de l'utilisateur en titre de la page et en <h1>.
+-   [x] Afficher le prénom et le nom de l'utilisateur en titre de la page et en <h1>.
 
 Suppression d'un utilisateur
 

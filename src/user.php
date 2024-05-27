@@ -1,4 +1,7 @@
 <?php
+    if(isset($_GET["id"]) && !empty ($_GET["id"])){
+
+    
 
 require_once("connect.php");
 
@@ -9,7 +12,19 @@ require_once("connect.php");
     $query->bindValue(":id", $id, PDO::PARAM_INT);
     $query->execute();
     $user = $query->fetch();
+
+    //on vérifie si l'utilisateur existe
+    if(!$user){
+        header("Location: index.php");
+    } else {
+        require_once("disconnect.php");
+    }
+
+} else {
+    header("Location: index.php");
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

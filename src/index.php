@@ -47,6 +47,8 @@
                         <td><?= $user["last_name"] ?></td>
                         <td>
                             <a href="user.php?id=<?= $user["id"] ?>">Voir</a>
+                            <a href="update.php?id=<?= $user["id"] ?>">Modifier</a>
+                            <a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a>
                         </td>
                     </tr>
                 <?php
